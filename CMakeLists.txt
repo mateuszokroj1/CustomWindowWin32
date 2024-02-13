@@ -6,4 +6,8 @@ set(CMAKE_GENERATOR "MsBuild")
 
 project(app LANGUAGES C CXX)
 
-add_executable(app WIN32 main.cpp)
+add_executable(app WIN32 main.cpp main_window.cpp)
+
+install(TARGETS app
+	RUNTIME DESTINATION .
+)

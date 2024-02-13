@@ -1,7 +1,14 @@
-#include <windows.h>
+#include <Windows.h>
 
-int WINAPI wWinMain(HINSTANCE instance_handler, HINSTANCE prev_instance_handler, PWSTR command_line, int window_visibility)
+#include <string>
+
+#include "MainWindow.hpp"
+
+int WINAPI wWinMain(HINSTANCE instance_handle, HINSTANCE prev_instance_handle, PWSTR command_line, int window_visibility)
 {
-    MessageBoxA(0, "text", "text", 0);
+    std::wstring cmd_line_string(command_line);
+
+    MainWindow window(instance_handle, L"Title");
+    window.showWindow();
     return 0;
 }
